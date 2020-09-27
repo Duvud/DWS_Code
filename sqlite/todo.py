@@ -1,7 +1,7 @@
 import sqlite3
 from flask import Flask
 from flask import g
-DATABASE = '/db/database.db'
+DATABASE = 'db/todo.db'
 
 app = Flask(__name__)
 
@@ -19,4 +19,5 @@ def close_connection(exception):
 
 @app.route('/')
 def index():
-    cur = get_db().cursor()
+    cur = getDb()
+    return "Probando conexión a la base de datos"
