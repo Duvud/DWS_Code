@@ -20,4 +20,4 @@ def close_connection(exception):
 @app.route('/')
 def index():
     cur = getDb()
-    return "Probando conexión a la base de datos"
+    return "Probando conexión a la base de datos" 

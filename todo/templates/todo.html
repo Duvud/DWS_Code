@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo form</title>
+</head>
+<body>
+    <form action="/insert" method='POST'>
+        <label>
+            <label for="value">todo</label>
+            <input type="value" id="value" name="value">
+            <input type="submit" value="Submit">
+        </label>
+    </form>
+    <form action="/show">
+        <label>
+            <input type="submit" value="Submit">
+        </label>
+    </form>
+    <h1>Resultado: </h1>
+    {% for paco in value %}
+        <h4>{{paco}}</h4>
+    {% endfor %}
+</body>
+</html>
