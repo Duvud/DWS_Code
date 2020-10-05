@@ -13,14 +13,28 @@ def getDb():
     conn = sqlite3.connect(DATABASE)
     return conn
 
-#Este metodo principal
+def render():
+    return render_template('todo.html', value = show())
+
+#Este es el metodo principal
 @app.route('/todo.html',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        insert()
-        return render_template('todo.html', value = show())
-    else:    
-        return render_template('todo.html', value = show())
+        insert()    
+    return render()
+
+@app.route('/eliminar')
+@app.route('/eliminar/<id>')
+def eliminar(id=None):
+    if id!=None:
+        cur = getDb()
+        query = ("DELETE FROM TODO WHERE ID = (?)")
+        parse = (id, )
+        cur.execute(query,parse)
+        cur.commit()
+        cur.close()
+    return render()
+
 
 #Este metodo utiliza el metodo para cargar datos de una tabla y devuelve la página principal pero con los datos cargados
 def show():

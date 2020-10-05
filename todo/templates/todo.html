@@ -19,8 +19,11 @@
         </label>
     </form>
     <h1>Resultado: </h1>
-    {% for row in value %}
-        <h4>{{row}}</h4>
+    {% for i in range(0,value|length)  %}
+        <div>
+            <h4>{{value[i][1]}}</h4>
+            <a href="/eliminar/{{value[i][0]}}">Eliminar todo</a>
+        </div>
     {% endfor %}
 </body>
 </html>
