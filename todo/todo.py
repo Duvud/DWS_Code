@@ -13,8 +13,17 @@ def getDb():
     conn = sqlite3.connect(DATABASE)
     return conn
 
-#Este metodo carga los resultados de un select en una lista y los devuelve
-def loadTodoTable():
+#Este metodo principal
+@app.route('/todo.html',methods=['GET','POST'])
+def index():
+    if request.method == 'POST':
+        insert()
+        return render_template('todo.html', value = show())
+    else:    
+        return render_template('todo.html', value = show())
+
+#Este metodo utiliza el metodo para cargar datos de una tabla y devuelve la página principal pero con los datos cargados
+def show():
     cur = getDb()
     select = '''SELECT * FROM TODO'''
     recs = cur.execute(select)
@@ -24,24 +33,7 @@ def loadTodoTable():
     cur.close()
     return result
 
-#Este metodo nos devuelve la página principal
-@app.route('/')
-def index():    
-    return render_template('todo.html')
-
-#Este metodo utiliza el metodo para cargar datos de una tabla y devuelve la página principal pero con los datos cargados
-@app.route('/show')
-def show():
-    result=loadTodoTable()
-    return render_template('todo.html', value = result)
-
-""" 
-Este metodo recibe valores de un formulario por POST 
-y hace un insert a través de parametros para despues
-devolver la página principal con los datos actualizados
-"""
-@app.route('/insert/',methods=['GET','POST'])
-@app.route('/insert/?<value>',methods=['GET','POST'])
+#Este metodo realiza un insert hacia la base de datos
 def insert(value=None):
     cur = getDb()
     fResult = request.form['value']
@@ -51,5 +43,5 @@ def insert(value=None):
         cur.execute(query,cosa)
         cur.commit()
         cur.close()
-    respuestaDb=loadTodoTable()
-    return render_template('todo.html', value = respuestaDb)
+    else:
+        cur.close()

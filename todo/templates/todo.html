@@ -6,21 +6,21 @@
     <title>todo form</title>
 </head>
 <body>
-    <form action="/insert" method='POST'>
+    <form action="/todo.html" method='POST'>
         <label>
             <label for="value">todo</label>
             <input type="value" id="value" name="value">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Añadir todos">
         </label>
     </form>
-    <form action="/show">
+    <form action="/todo.html">
         <label>
-            <input type="submit" value="Submit">
+            <input type="submit" value="mostrar todos">
         </label>
     </form>
     <h1>Resultado: </h1>
-    {% for paco in value %}
-        <h4>{{paco}}</h4>
+    {% for row in value %}
+        <h4>{{row}}</h4>
     {% endfor %}
 </body>
 </html>
