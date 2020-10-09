@@ -13,21 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*Te devuelve el index como ruta por defecto*/ 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/{user}/{name}', function() {
-    return "Hola {name}";
-});
-
-Route::get('/DNI/{num}', function() {
-    return "Su dni es {num}";
-})->where('num','[0-9]{8}');
-
-Route::get('/DNI/{num}{l}', function($num,$l) {
-    return "Su numero es ".$num " la letra es".$l;
-})->where([
-    'num' => '[0-9]{8}',
-    'l' => '[a-z]{1}'
-]);
+/*Te devuelve la página producto si te pasa un codigo con 3 letras y 4 numeros*/ 
+Route::get('/producto/{codigo}', function($codigo) {
+    return view('producto',['codigo => '.$codigo]);
+})->where('codigo','[a-z]{3},[0-9]{4}');
