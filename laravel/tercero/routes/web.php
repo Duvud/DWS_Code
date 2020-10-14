@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 /*Te devuelve el index como ruta por defecto*/ 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
 /*Te devuelve la página producto si te pasa un codigo con 3 letras y 4 numeros*/ 
 Route::get('/producto/{codigo}', function($codigo) {
-    return view('producto',['codigo => '.$codigo]);
-})->where('codigo','[a-z]{3},[0-9]{4}');
+    return "El codigo del producto es = " . $codigo;
+})->where('codigo','[a-zA-z]{3}[0-9]{4}');

@@ -7,8 +7,9 @@
 </head>
 <body>
     <?php 
-    $codigo = "aaa0000";
-    echo $codigo;    
+    $url = 'producto/aaa0000';
+    $contenidos = file_get_contents($url);
+    echo $contenidos;
     ?>
 </body>
 </html>
