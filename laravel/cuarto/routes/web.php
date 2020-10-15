@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Pformulario;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +18,4 @@ use Illuminate\Http\Request;
 Route::view('/registro', 'registro');
 
 //Este route enruta los datos del formulario al controlador
-Route::post('/mostrardatos','Pformulario@procesar');
+Route::post('/mostrardatos',[Pformulario::class,'procesar']);

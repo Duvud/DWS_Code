@@ -6,7 +6,7 @@
     <title>Registro</title>
 </head>
 <body>
-    <form action="/mostrardatos" method="POST">
+    <form action="{{url('/mostrardatos')}}" method="POST">
         @csrf
         <input type="text" id="nombre" name="nombre">
         <input type="submit" value="Enviar datos">

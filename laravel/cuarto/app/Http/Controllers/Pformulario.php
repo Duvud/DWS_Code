@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class Pformulario extends Controller
 {
-    function procesar(Request $req){
-        print_r($req->input());
+    public function procesar(Request $req){
+        $nombre = $req->nombre;
+        return view('resultado',['nombre' => $nombre]);
     }
 }
