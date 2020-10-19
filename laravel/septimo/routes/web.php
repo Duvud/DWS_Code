@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//Esta ruta te devuelve el formulario principal
 Route::view('/form','form');
 
-
-Route::post('/procesaForm',[validarFormulatio::class,'validar']);
+//Esta ruta es para redirigir los datos del formulario hacia las clases que los valida
+Route::post('/procesarForm',[validarFormulario::class,'validar']);
