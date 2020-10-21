@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Exceptions\Handler;
 use App\Rules\UpperCase;
+use App\Rules\DniCorrecto;
 
 class validarFormulario extends Controller
 {
@@ -15,8 +16,8 @@ class validarFormulario extends Controller
             //'discapacidad' => ['integer','max:100|min:1'],//un valor entre 1 y 100
             //'fecha_nacimiento' => ['required','before_or_equal:20 October 2002'],//Que sea mayor de edad
             //'id' => ['required','regex:/[0-9]{3}[A-Z]{3}/'],//Tres números seguidos de tres letras mayus
-            //'codigo_seguridad' => ['regex:/[[ab]{1}[0-9]*]*[[cc]{1}[0-9]*[0-9]*]*/'],//Si cumple con el ejemplo turbio ese
-            'dni' => ['required','regex:/[0-9]{8}[a-zA-Z]{1}/' ,new DniCorrecto]
+            //'codigo_seguridad' => ['regex:/ab+\d*cc+\d*/'],//Si cumple con el ejemplo turbio ese
+            'dni' => ['required','regex:/[0-9]{8}[a-zA-Z]{1}/',new DniCorrecto]
         ]);
             //Si llega hasta aqui es que no ha saltado nada
         return 'test is ok';

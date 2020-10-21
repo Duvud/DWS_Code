@@ -24,29 +24,37 @@ class DniCorrecto implements Rule
      * @return bool
      */
     public function passes($attribute, $value){
-        $sumTotal=0;//Variable en la que guardaremos la suma total
-        $totalPos=0;//En esta variable guardaremos el resto de la división
-        $diccionario = "abcdefghijklmnñopqrstuvwxyz";
-        $dicPos;//Aquí guardaremos la posicion del caracter dentro del diccionario
 
-        //Vamos leyendo e incrementando $sumTotal
-        for( $i=0 ; $i<8 ; $i++ ){
-            $sumTotal+=(int)$value[$i];
-        }
+        $pattern = "/[0-9]{8}[a-zA-Z]{1}/";
+        if (preg_match($pattern,$value) == 1){
 
-        $totalPos = $sumTotal % 23;//Hacemos el cálculo principal
+            $sumTotal="";//Variable en la que guardaremos la suma total
+            $totalPos="";//En esta variable guardaremos el resto de la división
+            $diccionario = "trwagmyfpdxbnjzsqvhlcke";
 
-        //Comprobamos en que posicion del diccionario está la última cifra y devolvemos true o false
-        for( $i=0 ; $i<strlen($diccionario) ; $i++ ){
-            if($diccionario[$i] == strtolower($value[strlen($value)-1])){
-                if (($i+1) == $totalPos)
-                    return true;
-                else
-                    return false;
-            }elseif($i == strlen($diccionario) ){
-                return false;
+            for( $i=0 ; $i<strlen($value)-1 ; $i++ ){
+                $sumTotal.=strval($value[$i]);
             }
+            $sumTotal = intval($sumTotal);
+
+            $totalPos = $sumTotal % 23;//Hacemos el cálculo principal
+
+            //Comprobamos en que posicion del diccionario está la última cifra y devolvemos true o false
+            for( $i=0 ; $i<strlen($diccionario) ; $i++ ){
+                if($diccionario[$i] == strtolower($value[strlen($value)-1])){
+                    if ($i == $totalPos)
+                        return true;
+                    else
+                        $this->message();
+                    }elseif($i == strlen($diccionario)){
+                        $this->message();
+                    }
+            }
+        }else{
+            $this->message();
         }
+
+        
     }
 
     /**
@@ -56,6 +64,6 @@ class DniCorrecto implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'F';
     }
 }
