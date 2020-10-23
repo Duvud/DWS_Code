@@ -18,6 +18,7 @@
         <input type="text" placeholder="Discapacidad" name="discapacidad">
         <input type="text" placeholder="ID" name="id">
         <input type="text" placeholder="Codigo de seguridad" name="codigo_seguridad">
+        <input type="text" placeholder="Correo electronico" name="email">
         <button type="submit">Validar y enviar</button>
     </form>
 </body>
