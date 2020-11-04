@@ -28,11 +28,11 @@ class CodeRule implements Rule
         //'regex:"/ab(\d)ab(\d)cc(\d\d)/"'
         $pattern = "/ab(\d)ab(\d)cc(\d)/";
         $aMatch=[];
-        if (preg_match($pattern,$value,$aMatch) == 1){
-            $sA1 = $aMatch[1]+$aMatch[1];
-            $sA2 = $aMatch[2]+$aMatch[2];
+        if (preg_match($pattern,$value,$aMatch)){
+            $sA1 = $aMatch[1].$aMatch[1];
+            $sA2 = $aMatch[2].$aMatch[2];
             $sC1 = $aMatch[3];
-            if(strcmp($aMatch[1],$aMatch[3]) == 0 ||strcmp($aMatch[1],$aMatch[3]) == 0){
+            if(strcmp($aMatch[1],$aMatch[3]) || strcmp($aMatch[1],$aMatch[3])){
                 return true;
             }else
                 $this->message();
