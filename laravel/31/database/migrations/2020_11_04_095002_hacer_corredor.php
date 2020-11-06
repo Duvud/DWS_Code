@@ -19,6 +19,7 @@ class HacerCorredor extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('procedencia');
+            $table->int('tiempoS');
         });
     }
 
