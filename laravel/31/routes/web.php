@@ -20,5 +20,5 @@ Route::get('/', function () {
 
 Route::view('form','formCorredores');
 
-Route::post('procesarForm',[ProcesarFormulario::class,'procesar']);
+Route::post('ProcesarForm',[ProcesarFormulario::class,'procesar']);
 

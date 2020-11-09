@@ -9,7 +9,8 @@ class ProcesarFormulario extends Controller
 {
     public function procesar(Request $req){
         $corredor = new Corredor($req->all());
-        $corredor = Corredor::all()->sortBy("tiempoS");
-        $corredor-> save();
+        $corredor->save();
+        $corArray = new Corredor();
+        return "Datos enviados satisfactoriamente";
     }
 }

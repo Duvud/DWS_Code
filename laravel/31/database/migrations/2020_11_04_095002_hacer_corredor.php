@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Query\Expression;
 
 class HacerCorredor extends Migration
 {
@@ -19,7 +20,7 @@ class HacerCorredor extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('procedencia');
-            $table->int('tiempoS');
+            $table->string('tiempoS')->default('abandona');
         });
     }
 
