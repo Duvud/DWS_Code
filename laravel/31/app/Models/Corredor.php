@@ -9,6 +9,6 @@ class Corredor extends Model
 {
     protected $table = 'corredor';
     protected $primaryKey = 'numero-dorsal';
-    protected $fillable = ['numero-dorsal','nombre','apellidos','procedencia','tiempoS'];
+    protected $fillable = ['numero-dorsal','nombre','apellidos','procedencia','imagen','tiempoS'];
     use HasFactory;
 }

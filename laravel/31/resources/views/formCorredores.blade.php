@@ -12,6 +12,7 @@
         <input type="text" placeholder="nombre" name="nombre">
         <input type="text" placeholder="apellidos" name="apellidos">
         <input type="text" placeholder="Procendencia del corredor" name="procedencia">
+        <input type="text" placeholder="imagen" name="imagen" value='1.jpg'>
         <input type="text" placeholder="Tiempo en segundos" name="tiempoS" value="ABANDONA">
         <button type="submit">Enviar datos</button>
     </form>

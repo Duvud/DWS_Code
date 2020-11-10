@@ -20,6 +20,7 @@ class HacerCorredor extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('procedencia');
+            $table->string('imagen')->default('1.jpg');
             $table->string('tiempoS')->default('abandona');
         });
     }
