@@ -23,8 +23,8 @@ Route::get('admin', function(){
 });
 
 
-Route::get('nlogin', function(){
-    return "no Sos Admin";        
+Route::get('nlogin/{$redirect}', function($request){
+    return $request;        
 });
 
 Route::middleware(['auth:sanctum', 'verified',Tipo::class])->get('/dashboard', function () {

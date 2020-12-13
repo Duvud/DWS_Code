@@ -21,4 +21,11 @@ Route::get('/', function () {
 Route::view('form','formCorredores');
 
 Route::post('ProcesarForm',[ProcesarFormulario::class,'procesar']);
+<<<<<<< HEAD
+=======
+
+Route::get('/verCorredor/{nombre}/{apellidos}/{imagen}', function($nombre,$apellidos,$imagen){
+        return view('verCorredor', ['nombre' => $nombre, 'apellidos' => $apellidos , 'imagen' => $imagen]);
+});
+>>>>>>> 26aea4356048c160352901dbef0f6fb86c48eec5
 
