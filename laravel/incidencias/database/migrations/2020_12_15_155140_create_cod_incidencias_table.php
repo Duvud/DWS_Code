@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CrearTablaAdmins extends Migration
+class CreateCodIncidenciasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CrearTablaAdmins extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('cod_incidencias', function (Blueprint $table) {
+            $table->string('cod_incidencia')->primary();
             $table->timestamps();
+
         });
     }
 
@@ -31,6 +27,6 @@ class CrearTablaAdmins extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('cod_incidencias');
     }
 }
