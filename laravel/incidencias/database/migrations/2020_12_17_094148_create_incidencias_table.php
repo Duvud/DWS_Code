@@ -11,6 +11,7 @@ class CreateIncidenciasTable extends Migration
      *
      * @return void
      */
+    // user,cod_incidencia,aula,fecha,hora,estado
     public function up()
     {
         Schema::enableForeignKeyConstraints();
@@ -21,7 +22,8 @@ class CreateIncidenciasTable extends Migration
             $table->string('aula');
             $table->date('fecha');
             $table->time('hora');
-            $table->string('estado');
+            $table->string('estado')->default('recibida');
+            $table->string('comentario')->default(null);
             $table->timestamps();
         });
         Schema::table('incidencias',function(Blueprint $table){

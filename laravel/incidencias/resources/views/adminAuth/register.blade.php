@@ -1,3 +1,4 @@
+<!-- <input id="type" type="hidden"  name="type" value="1">-->
 @extends('layouts.app')
 
 @section('content')
@@ -5,10 +6,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Admin Register') }}</div>
-
+                    <div class="card-header">{{ __('Register') }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ url('register/admin') }}">
+                        <form method="POST" action="{{ url('/register/admin') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -68,6 +68,7 @@
                                     </button>
                                 </div>
                             </div>
+                            <input id="type" type="hidden"  name="type" value="1">
                         </form>
                     </div>
                 </div>
@@ -75,3 +76,4 @@
         </div>
     </div>
 @endsection
+

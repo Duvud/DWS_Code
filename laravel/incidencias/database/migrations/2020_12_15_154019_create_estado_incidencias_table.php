@@ -16,10 +16,8 @@ class CreateEstadoIncidenciasTable extends Migration
         Schema::create('estado_incidencias', function (Blueprint $table) {
             $table->string('cod_estado')->primary();
             $table->timestamps();
-
         });
     }
-
     /**
      * Reverse the migrations.
      *

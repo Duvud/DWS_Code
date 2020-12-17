@@ -2,12 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7060e0ad-1dc3-46a4-a155-eddaf09d5897" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_153511_create_aulas_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_154019_create_estado_incidencias_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_155140_create_cod_incidencias_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminIncidencias.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrarAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/IsAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Aulas.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Cod_incidencias.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Estado_incidencias.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Incidencias.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/adminAuth/incidencias.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/incidencias.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_14_094530_crear_tabla_admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_094148_create_incidencias_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AdminLoginController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AdminRegisterController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_154019_create_estado_incidencias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_154019_create_estado_incidencias_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_17_094148_create_incidencias_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_17_094148_create_incidencias_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminAuth/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminAuth/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminAuth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminAuth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/adminApp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/adminApp.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +164,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -155,6 +173,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\DWS_Code\laravel\incidencias\resources\views" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -172,7 +195,11 @@
       <updated>1607901974817</updated>
       <workItem from="1607901976625" duration="1786000" />
       <workItem from="1607933005951" duration="7915000" />
-      <workItem from="1607969792553" duration="10247000" />
+      <workItem from="1607969792553" duration="19688000" />
+      <workItem from="1608107592064" duration="10247000" />
+      <workItem from="1608135447332" duration="92000" />
+      <workItem from="1608135915530" duration="10415000" />
+      <workItem from="1608200237136" duration="26316000" />
     </task>
     <servers />
   </component>
